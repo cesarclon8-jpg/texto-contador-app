@@ -1,3 +1,7 @@
+// En Cloud Run el backend corre como servicio separado.
+// BACKEND_URL se sustituye en build time via envsubst en el Dockerfile,
+// o usa la URL hardcodeada de producción como fallback.
+const BACKEND_URL = window.BACKEND_URL || 'https://dpa-texto-contador-app-t-run-backend-551e-c6a35nwrna-ew.a.run.app';
 const TEXTO = 'Bienvenidos a la raza humana';
 
 const btn    = document.getElementById('save-button');
@@ -9,7 +13,7 @@ btn.addEventListener('click', async () => {
   status.textContent = 'Guardando…';
 
   try {
-    const res = await fetch('/api/count', {
+    const res = await fetch(`${BACKEND_URL}/count`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: TEXTO }),
