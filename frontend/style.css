@@ -1,0 +1,62 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f0f1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  background: #1a1a2e;
+  border: 1px solid rgba(108,99,255,0.3);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: #e0e0f0;
+  line-height: 1.4;
+}
+
+.firma {
+  font-size: 0.95rem;
+  color: #a0a0c0;
+  font-style: italic;
+}
+
+#save-button {
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: center;
+}
+
+#save-button:hover  { background: #574fd6; }
+#save-button:active { background: #4338ca; }
+#save-button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+#status {
+  font-size: 0.9rem;
+  min-height: 1.4rem;
+  color: #a0a0c0;
+}
+
+#status.ok    { color: #2ed573; }
+#status.error { color: #ff4757; }
